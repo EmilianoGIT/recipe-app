@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #bdd4e7;
+    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.mobile-container {
+    background-color: white;
+    width: 400px;
+    box-shadow: 0 0 10px 2px #333333;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+header {
+    padding: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+header input {
+    background-color: #eee;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    font-family: inherit;
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+
+.fav-container {
+    background-color: rgb(236, 220, 247);
+    padding: 0.25rem 1rem;
+    text-align: center;
+
+}
+
+.fav-meals {
+    /*TODO: figure out how to make an horizontal scroll*/
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+.fav-meals li {
+    cursor: pointer;
+    position: relative;
+    margin: 5px;
+    width: 90px;
+}
+
+.fav-meals li .clear {
+    background-color: transparent;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    border: none;
+    top: -0.5rem;
+    right: -0.5rem;
+    font-size: 1.2rem;
+}
+
+.fav-meals li:hover .clear {
+    opacity: 1;
+}
+
+.fav-meals li img {
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    box-shadow:  0 0 10px 2px #333333;
+    /*Not sure if object fit is useful at all lol*/
+    object-fit: cover;
+    width: 75px;
+    height: 75px;
+}
+
+.fav-meals li span {
+    display: inline-block;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 75px;
+}
+
+.meal {
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow:  0 0 10px 2px #333333;
+    cursor: pointer;
+    /*So it cuts the borders*/
+    overflow: hidden;
+}
+
+.meal-header {
+    position: relative;
+}
+
+.meal-header .random {
+    position: absolute;
+    top: 10px;
+    background-color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.meal-header img {
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+
+}
+
+.meal-body {
+    display: flex;
+    align-items: center;
+
+    /*So you keep the label and the heart button on the sides*/
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.meal-body h4 {
+    margin: 0;
+}
+
+.meal-body .fav-btn {
+    background-color: transparent;
+    border: none;
+    color: gray;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.meal-body .fav-btn.active {
+    color: rebeccapurple;
+}
+
+.popup-container {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+/*class used to keep the pop up hidden*/
+.popup-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popup {
+    background-color: white;
+    border-radius: 3px;
+    padding: 0 2rem;
+    max-width: 800px;
+    max-height: 100vh;
+    overflow: auto;
+    width: 100%;
+    position: relative;
+}
+
+.popup .close-popup {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.meal-info h1 {
+    text-align: center;
+}
+
+
